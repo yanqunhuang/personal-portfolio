@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学习笔记 - 个人网站</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">个人网站</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="about.html" class="nav-link">关于我</a>
+        <a href="projects.html" class="nav-link">项目案例</a>
+        <a href="notes.html" class="nav-link active">学习笔记</a>
+        <a href="portfolio.html" class="nav-link">AI作品集</a>
+        <a href="contact.html" class="nav-link">联系我</a>
+      </div>
+      <button class="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 学习笔记内容 -->
+  <section class="section bg-white">
+    <div class="container">
+      <h1 class="section-title">学习笔记</h1>
+      <p class="section-subtitle">分享我的ComfyUI和Cursor学习心得</p>
+      
+      <!-- 分类筛选 -->
+      <div class="filter-buttons mb-8">
+        <button class="filter-button active" data-category="all">全部</button>
+        <button class="filter-button" data-category="comfyui">ComfyUI</button>
+        <button class="filter-button" data-category="cursor">Cursor</button>
+        <button class="filter-button" data-category="ai">AI应用</button>
+      </div>
+      
+      <div class="grid grid-3 notes-grid">
+        <!-- 笔记卡片 1 -->
+        <div class="card fade-in" id="note1" data-category="comfyui">
+          <div class="card-content">
+            <div class="flex items-center justify-between mb-4">
+              <span class="tag bg-primary" style="color: white;">ComfyUI</span>
+              <span class="text-sm text-gray-500">2025-05-28</span>
+            </div>
+            <h3 class="card-title mb-4">ComfyUI基础工作流程搭建</h3>
+            <div class="prose" style="color: var(--gray-700);">
+              <p class="mb-4">
+                今天开始学习ComfyUI，这是一个基于节点的AI图像生成工具，相比Stable Diffusion WebUI，它提供了更灵活的工作流程设计能力。以下是我的学习笔记：
+              </p>
+              
+              <h4 class="font-semibold mb-2">1. 界面基础</h4>
+              <p class="mb-4">
+                ComfyUI的界面主要由节点编辑区、预览区和右侧菜单组成。通过右键点击可以添加各种节点，节点之间通过连线建立关系，形成完整的工作流程。
+              </p>
+              
+              <h4 class="font-semibold mb-2">2. 基础节点类型</h4>
+              <p class="mb-4">
+                - KSampler：核心采样器节点，控制生成过程<br>
+                - CLIPTextEncode：将文本提示转换为模型可理解的表示<br>
+                - VAE Decode/Encode：处理潜在空间和图像空间的转换<br>
+                - CheckpointLoader：加载模型权重<br>
+                - EmptyLatentImage：创建空白潜在图像
+              </p>
+              
+              <h4 class="font-semibold mb-2">3. 第一个工作流程</h4>
+              <p class="mb-4">
+                成功搭建了一个基础的图像生成工作流程，包括：<br>
+                - 加载模型<br>
+                - 设置正向和负向提示词<br>
+                - 创建空白潜在图像<br>
+                - 配置采样器参数<br>
+                - 解码并显示结果
+              </p>
+              
+              <h4 class="font-semibold mb-2">4. 关键参数理解</h4>
+              <p class="mb-4">
+                - Steps：采样步数，通常20-30步效果较好<br>
+                - CFG Scale：提示词遵循程度，值越高越严格遵循提示词<br>
+                - Sampler：不同采样器有不同特点，DPM++ 2M Karras效果较好<br>
+                - Seed：随机种子，固定后可重现结果
+              </p>
+              
+              <h4 class="font-semibold mb-2">5. 下一步计划</h4>
+              <p>
+                接下来将学习更复杂的工作流程，包括ControlNet的使用、图像到图像转换、蒙版编辑等高级功能。ComfyUI的灵活性令人印象深刻，期待探索更多可能性。
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">工作流程</span>
+              <span class="tag">节点系统</span>
+              <span class="tag">图像生成</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 笔记卡片 2 -->
+        <div class="card fade-in" id="note2" data-category="cursor">
+          <div class="card-content">
+            <div class="flex items-center justify-between mb-4">
+              <span class="tag bg-primary" style="color: white;">Cursor</span>
+              <span class="text-sm text-gray-500">2025-05-20</span>
+            </div>
+            <h3 class="card-title mb-4">Cursor AI辅助编程初体验</h3>
+            <div class="prose" style="color: var(--gray-700);">
+              <p class="mb-4">
+                今天开始尝试使用Cursor编辑器，这是一个集成了AI功能的代码编辑器，可以通过自然语言提示生成代码、解释代码和优化代码。以下是我的初步体验：
+              </p>
+              
+              <h4 class="font-semibold mb-2">1. 界面与基础功能</h4>
+              <p class="mb-4">
+                Cursor的界面类似VS Code，但在右侧增加了AI聊天面板。基础的代码编辑、语法高亮、文件管理等功能一应俱全，过渡非常自然。
+              </p>
+              
+              <h4 class="font-semibold mb-2">2. AI辅助功能</h4>
+              <p class="mb-4">
+                - 代码生成：通过自然语言描述需求，AI能生成相应代码<br>
+                - 代码解释：选中代码后，AI能详细解释其功能和原理<br>
+                - 代码优化：AI能提供性能优化和最佳实践建议<br>
+                - 错误修复：AI能识别错误并提供修复方案
+              </p>
+              
+              <h4 class="font-semibold mb-2">3. 实际应用案例</h4>
+              <p class="mb-4">
+                尝试让AI帮我编写了一个简单的数据可视化脚本，用于分析社群用户活跃度数据。通过自然语言描述需求，AI成功生成了完整的Python代码，包括数据处理和可视化部分，效率提升明显。
+              </p>
+              
+              <h4 class="font-semibold mb-2">4. 优缺点分析</h4>
+              <p class="mb-4">
+                优点：<br>
+                - 大幅提高编码效率，特别是处理重复性任务<br>
+                - 对新手友好，提供学习和理解代码的途径<br>
+                - 集成度高，无需在编辑器和AI工具间切换<br>
+                <br>
+                缺点：<br>
+                - 有时生成的代码需要微调才能正常工作<br>
+                - 对特定领域或最新技术的理解有限<br>
+                - 依赖网络连接，离线状态功能受限
+              </p>
+              
+              <h4 class="font-semibold mb-2">5. 下一步计划</h4>
+              <p>
+                计划深入学习Cursor的高级功能，特别是如何通过精确的提示词获得更准确的代码生成结果，以及如何将其应用到服饰社群数据分析工作中。
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">AI编程</span>
+              <span class="tag">代码生成</span>
+              <span class="tag">效率提升</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 笔记卡片 3 -->
+        <div class="card fade-in" id="note3" data-category="comfyui">
+          <div class="card-content">
+            <div class="flex items-center justify-between mb-4">
+              <span class="tag bg-primary" style="color: white;">ComfyUI</span>
+              <span class="text-sm text-gray-500">2025-05-15</span>
+            </div>
+            <h3 class="card-title mb-4">ComfyUI中的ControlNet应用</h3>
+            <div class="prose" style="color: var(--gray-700);">
+              <p class="mb-4">
+                今天深入学习了ComfyUI中ControlNet的应用，ControlNet是一种可以通过额外条件控制图像生成过程的技术，可以实现更精确的图像控制。
+              </p>
+              
+              <h4 class="font-semibold mb-2">1. ControlNet基础</h4>
+              <p class="mb-4">
+                ControlNet通过添加额外的控制条件（如线稿、姿势、深度图等），引导AI生成符合特定结构或布局的图像。在ComfyUI中，ControlNet作为独立节点与基础生成流程结合。
+              </p>
+              
+              <h4 class="font-semibold mb-2">2. 常用ControlNet模型</h4>
+              <p class="mb-4">
+                - Canny：基于边缘检测控制图像结构<br>
+                - OpenPose：基于人体姿势控制人物动作<br>
+                - Depth：基于深度图控制空间关系<br>
+                - Normal：基于法线图控制光照效果<br>
+                - Scribble：基于简单线稿控制大致形状
+              </p>
+              
+              <h4 class="font-semibold mb-2">3. 工作流程搭建</h4>
+              <p class="mb-4">
+                成功搭建了包含ControlNet的工作流程：<br>
+                - 加载参考图像并应用预处理器（如Canny边缘检测）<br>
+                - 加载ControlNet模型<br>
+                - 将ControlNet节点与主采样流程连接<br>
+                - 调整ControlNet影响强度<br>
+                - 生成最终图像
+              </p>
+              
+              <h4 class="font-semibold mb-2">4. 实际应用案例</h4>
+              <p class="mb-4">
+                尝试了将服饰设计草图转换为逼真的服装图像，效果令人惊喜。通过Scribble ControlNet，AI能够保留原始设计的关键线条和结构，同时添加材质、光影和细节，大大提高了设计效率。
+              </p>
+              
+              <h4 class="font-semibold mb-2">5. 参数调优技巧</h4>
+              <p class="mb-4">
+                - 控制强度：0.8-1.0适合严格遵循参考，0.4-0.7适合创意发挥<br>
+                - 起始/结束步数：控制ControlNet在生成过程中的影响范围<br>
+                - 多ControlNet结合：可以同时使用多个ControlNet实现复杂控制
+              </p>
+              
+              <h4 class="font-semibold mb-2">6. 下一步计划</h4>
+              <p>
+                计划将ControlNet应用到服饰社群内容创作中，特别是将用户草图转换为精美服装图像，以及根据人物姿势生成穿搭效果图，提升社群互动体验。
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">ControlNet</span>
+              <span class="tag">图像控制</span>
+              <span class="tag">服饰设计</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 笔记卡片 4 -->
+        <div class="card fade-in" id="note4" data-category="ai">
+          <div class="card-content">
+            <div class="flex items-center justify-between mb-4">
+              <span class="tag bg-primary" style="color: white;">AI应用</span>
+              <span class="text-sm text-gray-500">2025-05-10</span>
+            </div>
+            <h3 class="card-title mb-4">AI在服饰社群运营中的应用思考</h3>
+            <div class="prose" style="color: var(--gray-700);">
+              <p class="mb-4">
+                随着对AI工具的深入学习，我开始思考如何将这些技术应用到服饰社群运营工作中，以下是一些初步想法和可能的应用场景：
+              </p>
+              
+              <h4 class="font-semibold mb-2">1. 内容创作增强</h4>
+              <p class="mb-4">
+                - 使用ComfyUI生成独特的服饰搭配灵感图<br>
+                - 将简单草图转换为精美的服装设计图<br>
+                - 根据文字描述生成符合品牌调性的宣传图<br>
+                - 批量生成不同场景下的产品展示图
+              </p>
+              
+              <h4 class="font-semibold mb-2">2. 用户互动创新</h4>
+              <p class="mb-4">
+                - 开发"AI穿搭师"功能，用户上传照片获取个性化搭配建议<br>
+                - 创建"设计师梦工厂"活动，将用户创意通过AI实现<br>
+                - 推出"虚拟试衣间"，用户可以在不同服装上"试穿"<br>
+                - 举办AI创意设计比赛，增强社群参与感
+              </p>
+              
+              <h4 class="font-semibold mb-2">3. 数据分析与洞察</h4>
+              <p class="mb-4">
+                - 使用Cursor编写脚本分析社群用户行为数据<br>
+                - 构建用户兴趣预测模型，推送个性化内容<br>
+                - 分析社交媒体趋势，预测潜在流行元素<br>
+                - 自动生成数据可视化报告，辅助决策
+              </p>
+              
+              <h4 class="font-semibold mb-2">4. 运营效率提升</h4>
+              <p class="mb-4">
+                - 自动化内容日历规划和发布<br>
+                - AI辅助编写社群公告、活动文案<br>
+                - 智能用户问题分类和自动回复<br>
+                - 自动识别高潜力内容和活跃用户
+              </p>
+              
+              <h4 class="font-semibold mb-2">5. 潜在挑战</h4>
+              <p class="mb-4">
+                - 保持AI生成内容的品牌一致性<br>
+                - 平衡自动化与人情味之间的关系<br>
+                - 确保AI应用的道德和隐私考量<br>
+                - 培训团队成员掌握AI工具使用
+              </p>
+              
+              <h4 class="font-semibold mb-2">6. 下一步行动计划</h4>
+              <p>
+                计划先从内容创作环节入手，使用ComfyUI生成一批高质量的服饰搭配灵感图，测试用户反应。同时，使用Cursor开发一个简单的社群数据分析工具，为后续更深入的AI应用奠定基础。
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">AI应用</span>
+              <span class="tag">社群创新</span>
+              <span class="tag">效率提升</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 笔记卡片 5 -->
+        <div class="card fade-in" id="note5" data-category="cursor">
+          <div class="card-content">
+            <div class="flex items-center justify-between mb-4">
+              <span class="tag bg-primary" style="color: white;">Cursor</span>
+              <span class="text-sm text-gray-500">2025-05-05</span>
+            </div>
+            <h3 class="card-title mb-4">使用Cursor开发社群数据分析工具</h3>
+            <div class="prose" style="color: var(--gray-700);">
+              <p class="mb-4">
+                今天尝试使用Cursor AI辅助开发了一个简单的社群数据分析工具，用于分析用户活跃度和内容互动情况，记录一下开发过程和心得。
+              </p>
+              
+              <h4 class="font-semibold mb-2">1. 需求分析</h4>
+              <p class="mb-4">
+                需要一个工具能够：<br>
+                - 导入并清洗社群互动原始数据<br>
+                - 分析用户活跃时段分布<br>
+                - 识别高互动内容特征<br>
+                - 生成可视化报告
+              </p>
+              
+              <h4 class="font-semibold mb-2">2. 开发过程</h4>
+              <p class="mb-4">
+                使用Cursor的AI辅助功能，通过自然语言描述需求，快速生成了Python代码框架。主要使用pandas进行数据处理，matplotlib和seaborn进行可视化。AI能够理解我的需求，并生成相应的数据处理函数和可视化代码。
+              </p>
+              
+              <h4 class="font-semibold mb-2">3. AI辅助亮点</h4>
+              <p class="mb-4">
+                - 代码生成：只需描述"我需要一个函数来分析用户活跃时段"，AI就能生成完整函数<br>
+                - 错误修复：当数据处理出现问题时，AI能快速定位并提供修复方案<br>
+                - 功能扩展：轻松通过提示词添加新功能，如"添加一个热力图显示一周内活跃度分布"<br>
+                - 代码优化：AI提供了性能优化建议，如使用向量化操作代替循环
+              </p>
+              
+              <h4 class="font-semibold mb-2">4. 实现功能</h4>
+              <p class="mb-4">
+                成功实现了以下功能：<br>
+                - 用户活跃度时间分布分析<br>
+                - 内容类型与互动量关系分析<br>
+                - 用户参与度趋势图<br>
+                - 高互动内容关键词提取<br>
+                - 自动生成PDF分析报告
+              </p>
+              
+              <h4 class="font-semibold mb-2">5. 经验总结</h4>
+              <p class="mb-4">
+                - 明确的需求描述能获得更准确的代码生成<br>
+                - 复杂功能可拆分为多个小步骤逐步实现<br>
+                - 生成的代码需要理解并适当调整<br>
+                - AI特别擅长处理重复性的数据处理任务
+              </p>
+              
+              <h4 class="font-semibold mb-2">6. 下一步计划</h4>
+              <p>
+                计划进一步完善这个工具，添加用户分群分析和内容推荐功能，并尝试将其部署为web应用，方便团队成员使用。Cursor极大地提高了开发效率，让我这个非专业开发者也能快速实现有价值的工具。
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">数据分析</span>
+              <span class="tag">Python</span>
+              <span class="tag">可视化</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 笔记卡片 6 -->
+        <div class="card fade-in" id="note6" data-category="comfyui">
+          <div class="card-content">
+            <div class="flex items-center justify-between mb-4">
+              <span class="tag bg-primary" style="color: white;">ComfyUI</span>
+              <span class="text-sm text-gray-500">2025-04-28</span>
+            </div>
+            <h3 class="card-title mb-4">ComfyUI中的LoRA模型应用</h3>
+            <div class="prose" style="color: var(--gray-700);">
+              <p class="mb-4">
+                今天学习了ComfyUI中LoRA（Low-Rank Adaptation）模型的应用，这是一种轻量级的模型微调技术，可以为基础模型添加特定风格或内容能力。
+              </p>
+              
+              <h4 class="font-semibold mb-2">1. LoRA基础概念</h4>
+              <p class="mb-4">
+                LoRA是一种参数高效的微调方法，通过低秩矩阵分解来减少需要训练的参数数量。在实际应用中，它可以为基础模型添加特定的风格、概念或能力，而无需重新训练整个模型。
+              </p>
+              
+              <h4 class="font-semibold mb-2">2. ComfyUI中的LoRA应用</h4>
+              <p class="mb-4">
+                在ComfyUI中，LoRA通过LoRA Loader节点加载，并可以与基础模型结合使用。可以同时应用多个LoRA，并调整每个LoRA的强度，实现风格混合或特定效果增强。
+              </p>
+              
+              <h4 class="font-semibold mb-2">3. 服饰相关LoRA探索</h4>
+              <p class="mb-4">
+                尝试了几个与服饰相关的LoRA模型：<br>
+                - 特定服装风格LoRA（如日系、复古、极简等）<br>
+                - 面料质感增强LoRA（如丝绸、牛仔、针织等）<br>
+                - 特定品牌风格LoRA<br>
+                这些LoRA能够显著提升生成服饰图像的质量和风格一致性。
+              </p>
+              
+              <h4 class="font-semibold mb-2">4. 工作流程优化</h4>
+              <p class="mb-4">
+                设计了一个灵活的服饰生成工作流程：<br>
+                - 使用基础模型生成初始图像<br>
+                - 应用服装类型LoRA定义基本款式<br>
+                - 应用面料质感LoRA增强细节<br>
+                - 应用风格LoRA调整整体风格<br>
+                - 使用ControlNet控制人物姿势和构图
+              </p>
+              
+              <h4 class="font-semibold mb-2">5. 参数调优技巧</h4>
+              <p class="mb-4">
+                - LoRA强度通常在0.6-0.8之间效果最佳<br>
+                - 多个LoRA同时使用时，总强度建议不超过1.5<br>
+                - 风格类LoRA强度可以低一些（0.4-0.6）<br>
+                - 内容类LoRA强度可以高一些（0.7-0.9）
+              </p>
+              
+              <h4 class="font-semibold mb-2">6. 下一步计划</h4>
+              <p>
+                计划尝试训练自己的服饰风格LoRA，以便生成更符合特定品牌调性的图像。同时，将探索如何结合多个LoRA和ControlNet，创建更复杂、更精确的服饰生成工作流程。
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">LoRA模型</span>
+              <span class="tag">风格调整</span>
+              <span class="tag">服饰生成</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">首页</a>
+        <a href="about.html" class="footer-link">关于我</a>
+        <a href="projects.html" class="footer-link">项目案例</a>
+        <a href="notes.html" class="footer-link">学习笔记</a>
+        <a href="portfolio.html" class="footer-link">AI作品集</a>
+        <a href="contact.html" class="footer-link">联系我</a>
+      </div>
+      <p class="footer-copyright">© 2025 个人网站. 保留所有权利.</p>
+    </div>
+  </footer>
+
+  <script>
+    // 简单的移动端菜单切换
+    document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
+    
+    // 笔记筛选功能
+    document.querySelectorAll('.filter-button').forEach(button => {
+      button.addEventListener('click', function() {
+        // 更新按钮状态
+        document.querySelectorAll('.filter-button').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        this.classList.add('active');
+        
+        // 筛选笔记
+        const category = this.getAttribute('data-category');
+        const notes = document.querySelectorAll('.notes-grid .card');
+        
+        notes.forEach(note => {
+          if (category === 'all' || note.getAttribute('data-category') === category) {
+            note.style.display = 'block';
+          } else {
+            note.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
