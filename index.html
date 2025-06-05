@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人网站 - 首页</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">个人网站</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">首页</a>
+        <a href="about.html" class="nav-link">关于我</a>
+        <a href="projects.html" class="nav-link">项目案例</a>
+        <a href="notes.html" class="nav-link">学习笔记</a>
+        <a href="portfolio.html" class="nav-link">AI作品集</a>
+        <a href="contact.html" class="nav-link">联系我</a>
+      </div>
+      <button class="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 英雄区域 -->
+  <section class="hero fade-in">
+    <div class="container">
+      <h1 class="hero-title">欢迎来到我的个人网站</h1>
+      <p class="hero-subtitle">服饰社群运营 | ComfyUI & Cursor 学习者</p>
+      <div class="hero-buttons">
+        <a href="about.html" class="btn btn-primary">了解更多</a>
+        <a href="portfolio.html" class="btn btn-outline">查看作品集</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 精选项目 -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <h2 class="section-title">精选项目</h2>
+      <p class="section-subtitle">我的服饰社群运营项目案例</p>
+      
+      <div class="grid grid-3">
+        <!-- 项目卡片 1 -->
+        <div class="card fade-in">
+          <img src="images/project1.jpg" alt="时尚社群活动策划" class="card-image">
+          <div class="card-content">
+            <h3 class="card-title">时尚社群活动策划</h3>
+            <p class="card-text">为知名服饰品牌策划并执行线上社群活动，提升用户参与度和品牌忠诚度。</p>
+            <div class="mb-4">
+              <span class="tag">社群运营</span>
+              <span class="tag">活动策划</span>
+              <span class="tag">用户增长</span>
+            </div>
+            <a href="projects.html#project1" class="text-primary font-medium">查看详情 →</a>
+          </div>
+        </div>
+        
+        <!-- 项目卡片 2 -->
+        <div class="card fade-in">
+          <img src="images/project2.jpg" alt="服饰品牌内容营销" class="card-image">
+          <div class="card-content">
+            <h3 class="card-title">服饰品牌内容营销</h3>
+            <p class="card-text">为服饰品牌打造系列内容营销方案，通过优质内容吸引目标受众，提升品牌影响力。</p>
+            <div class="mb-4">
+              <span class="tag">内容营销</span>
+              <span class="tag">品牌建设</span>
+              <span class="tag">用户转化</span>
+            </div>
+            <a href="projects.html#project2" class="text-primary font-medium">查看详情 →</a>
+          </div>
+        </div>
+        
+        <!-- 项目卡片 3 -->
+        <div class="card fade-in">
+          <img src="images/project3.jpg" alt="社群用户增长方案" class="card-image">
+          <div class="card-content">
+            <h3 class="card-title">社群用户增长方案</h3>
+            <p class="card-text">设计并实施服饰社群用户增长策略，通过多渠道引流和精准定位，实现用户规模快速增长。</p>
+            <div class="mb-4">
+              <span class="tag">用户增长</span>
+              <span class="tag">渠道运营</span>
+              <span class="tag">数据分析</span>
+            </div>
+            <a href="projects.html#project3" class="text-primary font-medium">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-8">
+        <a href="projects.html" class="btn btn-outline">查看全部项目</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新学习笔记 -->
+  <section class="section bg-white">
+    <div class="container">
+      <h2 class="section-title">最新学习笔记</h2>
+      <p class="section-subtitle">分享我的ComfyUI和Cursor学习心得</p>
+      
+      <div class="grid grid-3">
+        <!-- 笔记卡片 1 -->
+        <div class="card fade-in">
+          <div class="card-content">
+            <div class="flex items-center justify-between mb-4">
+              <span class="tag bg-primary" style="color: white;">ComfyUI</span>
+              <span class="text-sm text-gray-500">2025-05-28</span>
+            </div>
+            <h3 class="card-title">ComfyUI基础工作流程搭建</h3>
+            <p class="card-text">学习了ComfyUI的基础界面和节点系统，成功搭建了第一个图像生成工作流程，理解了各个节点的功能和连接方式。</p>
+            <a href="notes.html#note1" class="text-primary font-medium">阅读更多 →</a>
+          </div>
+        </div>
+        
+        <!-- 笔记卡片 2 -->
+        <div class="card fade-in">
+          <div class="card-content">
+            <div class="flex items-center justify-between mb-4">
+              <span class="tag bg-primary" style="color: white;">Cursor</span>
+              <span class="text-sm text-gray-500">2025-05-20</span>
+            </div>
+            <h3 class="card-title">Cursor AI辅助编程初体验</h3>
+            <p class="card-text">探索了Cursor编辑器的AI辅助功能，学习如何通过自然语言提示生成代码，以及如何使用AI解释和优化现有代码。</p>
+            <a href="notes.html#note2" class="text-primary font-medium">阅读更多 →</a>
+          </div>
+        </div>
+        
+        <!-- 笔记卡片 3 -->
+        <div class="card fade-in">
+          <div class="card-content">
+            <div class="flex items-center justify-between mb-4">
+              <span class="tag bg-primary" style="color: white;">ComfyUI</span>
+              <span class="text-sm text-gray-500">2025-05-15</span>
+            </div>
+            <h3 class="card-title">ComfyUI中的ControlNet应用</h3>
+            <p class="card-text">学习了如何在ComfyUI中使用ControlNet进行精确的图像控制，包括姿势控制、线稿转换和深度图应用等高级技巧。</p>
+            <a href="notes.html#note3" class="text-primary font-medium">阅读更多 →</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-8">
+        <a href="notes.html" class="btn btn-outline">查看全部笔记</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">首页</a>
+        <a href="about.html" class="footer-link">关于我</a>
+        <a href="projects.html" class="footer-link">项目案例</a>
+        <a href="notes.html" class="footer-link">学习笔记</a>
+        <a href="portfolio.html" class="footer-link">AI作品集</a>
+        <a href="contact.html" class="footer-link">联系我</a>
+      </div>
+      <p class="footer-copyright">© 2025 个人网站. 保留所有权利.</p>
+    </div>
+  </footer>
+
+  <script>
+    // 简单的移动端菜单切换
+    document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
