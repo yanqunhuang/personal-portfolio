@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: 您的用户名/personal-portfolio
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "页面"
+    files:
+      - name: "about"
+        label: "关于我"
+        file: "about.html"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "个人简介", name: "intro", widget: "markdown"}
+          - {label: "专业技能", name: "skills", widget: "markdown"}
+      - name: "projects"
+        label: "项目案例"
+        file: "projects.html"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "项目列表", name: "projects", widget: "list", fields: [
+              {label: "项目名称", name: "name", widget: "string"},
+              {label: "项目描述", name: "description", widget: "text"},
+              {label: "项目图片", name: "image", widget: "image"}
+            ]}
