@@ -7,17 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body><script>
-  if (window.netlifyIdentity ) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
+<body>
   <!-- 导航栏 -->
   <nav class="navbar">
     <div class="navbar-container">
@@ -186,5 +176,15 @@
       navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
     });
   </script>
-</body>
+</body><script>
+  if (window.netlifyIdentity ) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </html>
