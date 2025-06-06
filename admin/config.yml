@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  repo: 您的用户名/personal-portfolio
   branch: main
 
 media_folder: "images/uploads"
